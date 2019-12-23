@@ -32,7 +32,7 @@ public class BinaryTreePostorderTraversal {
 
         LinkedList<Integer> resultList = new LinkedList<>();
 
-        Stack<TreeNode> stack = new Stack<>();
+        Deque<TreeNode> stack = new LinkedList<>();
         TreeNode node = root;
         while (node != null || !stack.isEmpty()) {
             resultList.addFirst(node.val);
@@ -63,7 +63,7 @@ public class BinaryTreePostorderTraversal {
 
         List<Integer> resultList = new ArrayList<>();
 
-        Stack<TreeNode> stack = new Stack<>();
+        Deque<TreeNode> stack = new LinkedList<>();
         HashSet<TreeNode> set = new HashSet<>();
         TreeNode node = root;
         while (node != null || !stack.isEmpty()) {

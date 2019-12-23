@@ -3,7 +3,8 @@ package tree;
 import base.TreeNode;
 import base.Trees;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * 101. Symmetric Tree
@@ -61,9 +62,9 @@ public class SymmetricTree {
         }
 
         TreeNode node1, node2;
-        Stack<TreeNode> stack1 = new Stack<>();
+        Deque<TreeNode> stack1 = new LinkedList<>();
         stack1.push(root);
-        Stack<TreeNode> stack2 = new Stack<>();
+        Deque<TreeNode> stack2 = new LinkedList<>();
         stack2.push(root);
         while (!stack1.isEmpty() && !stack2.isEmpty()) {
             node1 = stack1.pop();

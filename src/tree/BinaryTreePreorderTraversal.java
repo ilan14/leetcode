@@ -4,10 +4,8 @@ import base.Lists;
 import base.TreeNode;
 import base.Trees;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
+
 
 /**
  * 144. Binary Tree Preorder Traversal
@@ -19,7 +17,7 @@ public class BinaryTreePreorderTraversal {
         }
 
         TreeNode node = root;
-        Stack<TreeNode> stack = new Stack<>();
+        Deque<TreeNode> stack = new LinkedList<>();
         List<Integer> resultList = new ArrayList<>();
         while (node != null || !stack.isEmpty()) {
             while (node != null) {

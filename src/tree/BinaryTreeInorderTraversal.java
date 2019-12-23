@@ -4,10 +4,7 @@ import base.Lists;
 import base.TreeNode;
 import base.Trees;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * 94. Binary Tree Inorder Traversal
@@ -20,7 +17,7 @@ public class BinaryTreeInorderTraversal {
 
         List<Integer> resultList = new LinkedList<>();
         TreeNode node = root;
-        Stack<TreeNode> stack = new Stack<>();
+        Deque<TreeNode> stack = new LinkedList<>();
         while (node != null || !stack.isEmpty()) {
             while (node != null) {
                 stack.push(node);
