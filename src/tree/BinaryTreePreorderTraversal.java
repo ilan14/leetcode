@@ -24,12 +24,15 @@ public class BinaryTreePreorderTraversal {
         while (node != null || !stack.isEmpty()) {
             while (node != null) {
                 resultList.add(node.val);
-                stack.push(node);
+                if (node.right != null) {
+                    stack.push(node.right);
+                }
                 node = node.left;
             }
 
-            node = stack.pop();
-            node = node.right;
+            if (!stack.isEmpty()) {
+                node = stack.pop();
+            }
         }
 
         return resultList;
