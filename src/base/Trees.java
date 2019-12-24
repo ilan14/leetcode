@@ -1,6 +1,9 @@
 package base;
 
+import tree.BinaryTreeLevelOrderTraversal;
+
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class Trees {
@@ -25,5 +28,14 @@ public class Trees {
         }
 
         return root;
+    }
+
+    public static void printLevelOrder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+
+        List<List<Integer>> list = BinaryTreeLevelOrderTraversal.levelOrder(root);
+        list.forEach(Lists::printList);
     }
 }
