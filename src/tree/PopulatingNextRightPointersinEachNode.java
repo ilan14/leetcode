@@ -5,6 +5,10 @@ import java.util.Queue;
 
 /**
  * 116. Populating Next Right Pointers in Each Node
+ * <p>
+ * Follow up:
+ * You may only use constant extra space.
+ * Recursive approach is fine, you may assume implicit stack space does not count as extra space for this problem.
  */
 public class PopulatingNextRightPointersinEachNode {
     /**
@@ -32,6 +36,12 @@ public class PopulatingNextRightPointersinEachNode {
         return root;
     }
 
+    /**
+     * 层次遍历实现，违反空间要求了
+     *
+     * @param root
+     * @return
+     */
     public Node connect1(Node root) {
         if (root == null) {
             return null;
