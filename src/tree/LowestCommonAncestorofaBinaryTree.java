@@ -9,7 +9,34 @@ import java.util.LinkedList;
  * 236. Lowest Common Ancestor of a Binary Tree
  */
 public class LowestCommonAncestorofaBinaryTree {
+    /**
+     * recursive
+     *
+     * @param root
+     * @param p
+     * @param q
+     * @return
+     */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) {
+            return null;
+        }
+
+        if (root == p || root == q) {
+            return root;
+        }
+
+        TreeNode leftSearch = lowestCommonAncestor(root.left, p, q);
+        TreeNode rightSearch = lowestCommonAncestor(root.right, p, q);
+
+        if (leftSearch != null && rightSearch != null) {
+            return root;
+        }
+
+        return leftSearch == null ? rightSearch : leftSearch;
+    }
+
+    public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || p == null || q == null) {
             return null;
         }
