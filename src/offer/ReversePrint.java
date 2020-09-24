@@ -65,7 +65,7 @@ public class ReversePrint {
      * @param head
      * @return
      */
-    private static int[] reversePrint1(ListNode head) {
+    public static int[] reversePrint1(ListNode head) {
         if (head == null) {
             return new int[0];
         }
@@ -93,6 +93,41 @@ public class ReversePrint {
         array[pos] = head.val;
 
         return pos;
+    }
+
+    /**
+     * 网上看到的
+     * <p>
+     * 上面解法，得到链表长度后，实际上是可以确定每个节点对应的数组位置，不需要递归
+     * 在上面基础上减少了空间复杂度
+     * 时间 O(n) 空间 O(1)
+     * <p>
+     * 0 ms, 39.2 MB
+     *
+     * @param head
+     * @return
+     */
+    public static int[] reversePrint2(ListNode head) {
+        if (head == null) {
+            return new int[0];
+        }
+
+        int length = 0;
+        ListNode cur = head;
+        while (cur != null) {
+            length++;
+            cur = cur.next;
+        }
+
+        int[] array = new int[length];
+        cur = head;
+        while (cur != null) {
+            array[length - 1] = cur.val;
+            length--;
+            cur = cur.next;
+        }
+
+        return array;
     }
 
     public static void main(String[] args) {
